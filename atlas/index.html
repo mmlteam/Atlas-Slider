@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css"/>
+    <link rel="stylesheet" href="./css/atlas.css">
+</head>
+<body>
+    <section class="atlas-slide-wrapper">
+        <div class="container">
+            <div class="atlas-slider">
+                <div class="slide-item-wrap slide1 yellow" id="#ff9c24">
+                    <div class="atlas-slide-item">
+                        <img class="bar-img-wrap" src="./images/slide1.png" alt="firstslide"/>
+                        <img class="bar-chocolate" src="./images/slide1-chocolate.png" alt="firstslide"/>
+                    </div>
+                    <div class="slide-item-desc">
+                        <p>Remember those cookies Grandma used to make? It’s like that, only better.</p>
+                    </div>
+                </div>
+                <div class="slide-item-wrap slide2 choco" id="#ad8968">
+                    <div class="atlas-slide-item">
+                        <img class="bar-img-wrap" src="./images/slide2.png" alt="firstslide"/>
+                        <img class="bar-chocolate" src="./images/slide2-chocolate.png" alt="firstslide"/>
+                    </div>
+                    <div class="slide-item-desc">
+                        <p>Remember those cookies Grandma used to make? It’s like that, only better.</p>
+                    </div>
+                </div>
+                <div class="slide-item-wrap slide3 orange" id="#f26950">
+                    <div class="atlas-slide-item">
+                        <img class="bar-img-wrap" src="./images/slide3.png" alt="firstslide"/>
+                        <img class="bar-chocolate" src="./images/slide3-chocolate.png" alt="firstslide"/>
+                    </div>
+                    <div class="slide-item-desc">
+                        <p>Remember those cookies Grandma used to make? It’s like that, only better.</p>
+                    </div>
+                </div>
+                <div class="slide-item-wrap slide4 blue" id="#ffb81d">
+                    <div class="atlas-slide-item">
+                        <img class="bar-img-wrap" src="./images/slide4.png" alt="firstslide"/>
+                        <img class="bar-chocolate" src="./images/slide4-chocolate.png" alt="firstslide"/>
+                    </div>
+                    <div class="slide-item-desc">
+                        <p>Remember those cookies Grandma used to make? It’s like that, only better.</p>
+                    </div>
+                </div>
+                <div class="slide-item-wrap slide5 green" id="#27c7ba">
+                    <div class="atlas-slide-item">
+                        <img class="bar-img-wrap" src="./images/slide5.png" alt="firstslide"/>
+                        <img class="bar-chocolate" src="./images/slide5-chocolate.png" alt="firstslide"/>
+                    </div>
+                    <div class="slide-item-desc">
+                        <p>Remember those cookies Grandma used to make? It’s like that, only better.</p>
+                    </div>
+                </div>
+                <div class="slide-item-wrap slide6 pink" id="#33aad8">
+                    <div class="atlas-slide-item">
+                        <img class="bar-img-wrap" src="./images/slide6.png" alt="firstslide"/>
+                        <img class="bar-chocolate" src="./images/slide6-chocolate.png" alt="firstslide"/>
+                    </div>
+                    <div class="slide-item-desc">
+                        <p>Remember those cookies Grandma used to make? It’s like that, only better.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+<script>
+    $('.atlas-slider').slick({
+    dots: false,
+    infinite: true,
+    centerMode: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: false,
+    focusOnSelect: true,
+    responsive: [
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true
+      }
+    },
+]
+ });
+
+ // On before slide change
+// $('.atlas-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
+//   $('.slick-current').removeClass('slick-active-first slick-active-last');
+//   $('.slick-current').eq(0).addClass('slick-active-first');
+//   $('.slick-current').eq(3).addClass('slick-active-last');
+// }).trigger('afterChange');
+
+
+$('.atlas-slider').on('afterChange', function() {
+    // /var dataId = $('.slick-current').attr("data-slick-index");
+    var dataId = $('.slick-current').attr("id");
+
+    $('.atlas-slide-wrapper').css("background-color", dataId);
+
+    // alert($('#test').attr('id'))
+    //console.log(dataId);
+});
+
+</script>
+</html>
